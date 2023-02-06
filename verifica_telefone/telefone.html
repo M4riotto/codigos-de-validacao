@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function formatTelephone() {
+        let tel = document.querySelector("#tel").value;
+        let erro = document.querySelector("#erro-n");
+
+        if (tel.length === 11) {
+            let telOk = document.querySelector("#tel");
+            telOk.value = '(' + tel.substring(0, 2) + ')' + tel.substring(2, 7) + '-' + tel.substring(7, 11);
+
+            // Remove mensagem de erro caso tenha sido exibida previamente
+            erro.innerHTML = '';
+        } else {
+            erro.innerHTML = '<p style="color: red">Número de telefone incorreto. Por favor, verifique.</p>';
+        }
+    }
+</script>
+<body>
+    <form>
+        <label for="telephone">Telephone</label>
+        <div id="erro-n"></div>
+        <input type="text" id="tel" onblur="formatTelephone()">
+    </form>
+</body>
+</html>
