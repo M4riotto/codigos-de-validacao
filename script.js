@@ -1,3 +1,4 @@
+//verifica_CPF
 function formatCPF(cpf) {
   // Remove all non-digit characters
   cpf = cpf.replace(/\D/g, '');
